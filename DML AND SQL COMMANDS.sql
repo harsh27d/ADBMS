@@ -58,8 +58,19 @@ show create table employee7;
 select * from employee7;
 
 -- Default Constraint: set a default value for a column if no other value specified 
-create table employee4 (EmpID int NOT NULL , FirstName varchar(10),
-LastName varchar(10) , EmpDept varchar(10) default 'Opertations');
+CREATE TABLE employee4 (
+    EmpID INT NOT NULL,
+    FirstName VARCHAR(10),
+    LastName VARCHAR(10),
+    EmpDept VARCHAR(10) DEFAULT 'Operations'
+);
 
 desc Employee4;
+use company_db;
+insert into employee4 values(1,'A','B');
 
+insert into employee4 (EmpID , FirstName , LastName) values(1, 'Ravi' , 'Kumar');
+insert into employee4 (EmpID , FirstName , LastName) values(2  ,'Kriti' , 'Giri');
+select * from employee4;
+
+insert into employee4 values(3 , 'Kiran'  , 'Rao');-- This query will give error
